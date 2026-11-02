@@ -1,0 +1,19 @@
+[project]
+name = "practical-python"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "alex-shan", email = "shanxianzheng@gmail.com" }
+]
+requires-python = ">=3.13"
+dependencies = [
+    "jupyterlab>=4.6.5",
+]
+
+[project.scripts]
+practical-python = "practical_python:main"
+
+[build-system]
+requires = ["uv_build>=0.12.13,<0.13.0"]
+build-backend = "uv_build"

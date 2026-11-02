@@ -1,339 +1,128 @@
-# Practical Python Programming - Instructor Notes
-
-Author: David Beazley
-
-## Overview
-
-This document provides some general notes and advice on teaching the
-content of my “Practical Python” course including objectives, target
-audience, tricky bits, etc.   
-
-These instructions were given to people teaching the course in
-a typical three-day corporate training environment.  They might
-give you some insight about teaching your own course.
-
-## Target Audience and General Approach
-
-This course is intended to be an “Introduction to Python” course for
-people who already have some programming experience.  This is
-definitely not a course designed to teach people “programming 101.”
-
-Having said that, I have observed that the typical student in a Python
-course is also not likely to be a hard-core software engineer or
-programmer.  Instead, you are probably going to get a mix of
-engineers, scientists, web programmers, and more inexperienced
-developers.  Student background varies widely.  You might have some
-students with a lot of C,C++, Java experience, others might know PHP
-and HTML, others may be coming from tools like MATLAB, and others
-still might have almost no traditional “programming” experience at all
-despite my best attempts to make the prerequisites clear.
-
-With this in mind, the course aims to teach Python through the general
-problem of manipulating data (stock market data in particular).  This
-domain has been chosen because it’s simple and something everyone
-should know about it regardless of their background.  Just as an example,
-students with weak programming skills are still likely to know about
-common things like using a spreadsheet (e.g., Excel).  So, if they’re
-really stuck, you can tell them things like “well, this list of tuples
-is kind of like rows of data in a spreadsheet” or “a list
-comprehension is the same idea as applying an operation to a
-spreadsheet column and putting the result in a different column.”  The
-key idea is to stay grounded in a real-world setting as opposed to
-getting sidetracked into esoteric “computer science” problems (e.g.,
-“let’s go compute fibonacci numbers.”).
-
-This problem domain also works well for introducing other programming
-topics.  For example, scientists/engineers might want to know about
-data analysis or plotting.  So, you can show them how to make a plot
-using matplotlib. Web programmers might want to know how to present
-stock market data on a web-page.  So, you can talk about template
-engines.  Sysadmins might want to do something with log files.  So, you
-can point them at a log file of real-time streaming stock data.
-Software engineers might want to know about design.  So, you can have
-them look at ways to encapsulate stock data inside an object or making
-a program extensible (e.g., how would make this program produce output
-in 10 different table formats).  You get the idea.
-
-## Presentation Guidelines
-
-The presentation slides (notes) are there to provide a narrative
-structure to the course and for reference by students when they work
-on exercises.  Do not laboriously go over every bullet point on every
-slide--assume that students can read and that they will have time to
-go back when coding.  I tend to go through the slides at a pretty
-brisk pace, showing short examples interactively as I go.  I often
-skip slides entirely in favor of live demos.  For example, you don't
-really need to do a bunch of slides on lists.  Just go to the
-interpreter and do some list examples live instead. Rule of thumb: No
-more than 1 minute per slide unless it’s something unusually tricky.
-Honestly, you could probably skip most of the slides and simply
-lecture using live demos if you feel that it works for you.  I often
-do this.
-
-## Course Exercises
-
-The course has about 130 hands-on exercises.  If you do every single
-exercise and give students time to think and code, it will likely take
-them about 10-12 hours. In practice, you will probably find that students
-require more time on certain exercises.  I have some notes about this
-below.
-
-You should repeatedly emphasize to students that solution code is
-available and that it is okay to look at it and copy it--especially
-due to time requirements.
-
-Prior to teaching the course, I would strongly advise that you go
-through and work every single course exercise so that there are no
-surprises.
-
-During course delivery, I usually work every single exercise from
-scratch, without looking at the solution, on my computer while the
-students also work.  For this, I strongly advise you to have a printed
-copy of the exercises on hand that you can look at without having to
-pull it up on the computer screen (which is being projected).  Near
-the end of the exercise time period, I will start discussing my
-solution code, emphasizes different bits on the screen and talking
-about them.  If there are any potential problems with the solution
-(including design considerations), I’ll also talk about it.  Emphasize
-to students that they may want to look at/copy solution code before
-going forward.
-
-## Section 1:  Introduction
-
-The major goal of this section is to get people started with the
-environment.  This includes using the interactive shell and
-editing/run short programs.  By the end of the section, students
-should be able to write short scripts that read data files and perform
-small calculations.  They will know about numbers, strings, lists, and
-files.  There will also be some exposure to functions, exceptions, and
-modules, but a lot of details will be missing.
-
-The first part of this course is often the longest because students
-are new to the tools and may have various problems getting things to
-work.  It is absolutely critical that you go around the room and make
-sure that everyone can edit, run, and debug simple programs.  Make
-sure Python is installed correctly.  Make sure they have the course
-exercises downloaded.  Make sure the internet works.  Fix anything
-else that comes up.
-
-Timing: I aim to finish section 1 around lunch on the first day. 
-
-## Section 2 : Working with Data
-
-This section is probably the most important in the course.  It covers
-the basics of data representation and manipulation including tuples,
-lists, dicts, and sets.
-
-Section 2.2 the most important.  Give students as much time as
-they need to get exercises working within reason.  Depending on audience,
-the exercises might last 45 minutes.  In the middle of this exercise,
-I will often move forward to Section 2.3 (formatted printing) and
-give students more time to keep working.  Together, Sections 2.2/2.3
-might take an hour or more.
-
-Section 2.4 has people explore the use of enumerate(), and zip().  I
-consider these functions essential so don’t skimp on it.
-
-Section 2.5 introduces the collections module.  There is a LOT that
-could be said about collections, but it won't be fully appreciated by
-students at this time.  Approach this more from the standpoint of
-"here's this cool module you should look at later. Here are a few cool
-examples."
-
-Section 2.6 introduces list comprehensions which are an important
-feature for processing list data.  Emphasize to students that list
-comprehensions are very similar to things like SQL database queries.
-At the end of this exercise, I often do an interactive demo involving
-something more advanced.  Maybe do a list comprehension and plot some
-data with matplotlib.  Also an opportunity to introduce Jupyter if
-you're so inclined.
-
-Section 2.7 is the most sophisticated exercise.  It relates to the use
-of first-class data in Python and the fact that data structures like
-lists can hold any kind of object that you want.  The exercises are
-related to parsing columns of data in CSV files and concepts are later reused in
-Section 3.2.
-
-Timing: Ideally, you want to be done with section 2 on the first day.
-However, it is common to finish with section 2.5 or 2.6.  So, don't
-panic if you feel that you're a bit behind.
-
-## 3. Program Organization
-
-The main goal of this section is to introduce more details about
-functions and to encourage students to use them.  The section builds
-from functions into modules and script writing.
-
-Section 3.1 is about going from simple “scripting” to functions.
-Students should be discouraged from writing disorganized “scripts.”
-Instead, code should at least be modularized into functions.  It makes
-the code easier to understand, it makes it easier to make changes
-later, and it actually runs a little bit faster.  Functions are good.
-
-Section 3.2 is probably the most advanced set of exercises in the
-whole course.  It has students write a general purpose utility
-function for parsing column-oriented data.  However, it makes heavy
-use of list comprehensions as well as lists of functions (e.g.,
-functions as first-class objects).  You will probably need to guide
-people through every single step of this code, showing how it works in
-great detail.  The payoff is huge however---you can show people a
-short general purpose function that does something amazingly powerful
-and which would be virtually impossible to write in C, C++, or Java
-without having a *LOT* of very complicated code.  There are a lot of
-possible design/discussion avenues for this code.  Use your
-imagination.
-
-Section 3.3 adds error handling to the function created in Section 3.2
-This is a good time to talk about exception handling generally.
-Definitely talk about the dangers of catching all exceptions.  This
-might be a good time to talk about the “Errors should never pass
-silently” item on the “Zen of Python.”
-
-*Note: Before Exercise 3.4, make sure students get fully working versions of report.py, pcost.py, and fileparse.py.   Copy from Solutions folder if needed *
-
-Section 3.4 Introduces module imports.  The file written in Section
-3.2-3.3 is used to simplify code in Section 3.1.  Be aware that you
-may need to help students fix issues with IDLE, sys.path, and other
-assorted settings related to import.
-
-Section 3.5 talks about `__main__` and script writing.  There's a bit
-about command line arguments.  You might be inclined to discuss a
-module like argparse.  However, be warned that doing so opens up
-a quagmire. It's usually better to just mention it and move on.
-
-Section 3.6 opens up a discussion about design more generally in Python.
-Is it better to write code that's more flexible vs code that's
-hardwired to only work with filenames?  This is the first place
-where you make a code change and have to refactor existing code.
-
-Going forward from here, most of the exercises make small changes
-to code that's already been written.
-
-## 4. Classes and Objects
-
-This section is about very basic object oriented programming.  In
-general, it is not safe to assume that people have much background in
-OO.  So, before starting this, I usually generally describe the OO
-“style” and how it's data and methods bundled together.  Do some
-examples with strings and lists to illustrate that they are “objects”
-and that the methods (invoked via .) do things with the object.
-Emphasize how the methods are attached to the object itself.  For
-example, you do items.append(x), you don’t call a separate function
-append(items, x).
-
-Section 4.1 introduces the class statement and shows people how to
-make a basic object.  Really, this just introduces classes as another
-way to define a simple data structure--relating back to using tuples
-and dicts for this purpose in section 2.
-
-Section 4.2 is about inheritance and how you use to create extensible
-programs.  This set of exercises is probably the most significant in terms of
-OO programming and OO design.  Give students a lot of time to work on
-it (30-45 minutes).  Depending on interest, you can spend a LOT of
-time discussing aspects of OO. For example, different
-design patterns, inheritance hierarchies, abstract base classes, etc.
-
-Section 4.3 does a few experiments with special methods.  I wouldn't
-spend too much time fooling around with this.  Special methods come up
-a bit later in Exercise 6.1 and elsewhere.
-
-Timing:   This is usually the end of the 2nd day.
-
-## 5. Inside Objects
-
-This section takes students behind the scenes of the object system and
-how it’s built using dictionaries, how instances and classes are tied
-together, and how inheritance works.  However, most important part of
-this section is probably the material about encapsulation (private
-attributes, properties, slots, etc.)
-
-Section 5.1 just peels back the covers and has students observe and
-play with the underlying dicts of instances and classes.
-
-Section 5.2 is about hiding attributes behind get/set functions and
-using properties.  I usually emphasize that these techniques are
-commonly used in libraries and frameworks--especially in situations
-where more control over what a user is allowed to do is desired.
-
-An astute Python master will notice that I do not talk about advanced
-topics such as descriptors, or attribute access methods (`__getattr__`,
-`__setattr__`) at all.  I have found, through experience, that this is
-just too much mental overload for students taking the intro course.
-Everyone’s head is already on the verge of exploding at this point and
-if you go talk about how something like descriptors work, you’ll lose
-them for the rest of the day, if not the rest of the course.  Save it
-for an "Advanced Python" course.
-
-If you're looking at the clock thinking "There's no way I'm going to
-finish this course", you can skip section 5 entirely.
-
-## 6. Generators
-
-The main purpose of this section is to introduce generators as a way
-to define custom iteration and to use them for various problems
-related to data handling.  The course exercises have students analyze
-streaming data in the form of stock updates being written to a log
-file.
-
-There are two big ideas to emphasize. First, generators can be used to
-write code based on incremental processing.  This can be very useful
-for things like streaming data or huge datasets that are too large to
-fit into memory all at once.  The second idea is that you can chain
-generators/iterators together to create processing pipelines (kind of
-like Unix pipes).  Again, this can be a really powerful way to process
-and think about streams, large datasets, etc.
-
-Some omissions: Although the iteration protocol is described, the
-notes don’t go into detail about creating iterable objects (i.e.,
-classes with `__iter__()` and `next()`).  In practice, I’ve found that
-it’s not necessary to do this so often (generators are often
-better/easier).  So, in the interest of time, I’ve made a conscious
-decision to omit it.  Also not included are extended generators
-(coroutines) or uses of generators for concurrency (tasklets, etc.).
-That’s better covered in advanced courses.
-
-## 7. Advanced Topics
-
-Basically this section is an assortment of more advanced topics that
-could have been covered earlier, but weren’t for various reasons
-related to course flow and content of the course exercises.  If you
-must know, I used to present this material earlier in the course, but
-found that students were already overloaded with enough information.
-Coming back to it later seems to work better---especially since by
-this point, everyone is much more familiar with working in Python and
-starting to get the hang of it.
-
-Topics include variadic function arguments (*args, **kwargs), lambda,
-closures, and decorators.  Discussion of decorators is only a tiny
-hint of what’s possible with metaprogramming.  Feel free to say more
-about what’s possible, but I’d probably stay out of metaclasses!
-Lately, I have been demoing "numba" as an example of a more
-interesting decorator.
-
-If you're pressed for time, most of section 7 can be skipped or heavily
-compressed (you could skip exercises for instance).
-
-## 8. Testing and Debugging
-
-The main purpose of this section is just to introduce various tools
-and techniques related to testing, debugging, and software
-development.  Show everyone the unittest module.  Introduce the
-logging module.  Discuss assertions and the idea of “contracts.”  Show
-people the debugger and profiler.  Most of this is self-explanatory.
-
-## 9. Packages
-
-At this point, students have written an assortment of files (pcost.py,
-report.py, fileparse.py, tableformat.py, stock.py, portfolio.py,
-follow.py, etc.).  Two main goals in this section.  First, put all of
-the code into a Python package structure.  This is only a gentle
-introduction to that, but they'll move the files into a directory and
-everything will break.  They'll need to fix their import statements
-(package relative imports) and maybe fiddle with an `__init__.py` file.
-Second goal, write a simple setup.py file that they can use to package
-up the code and give it away to someone.  That's it.  End of the
-course.
-
-[Contents](Contents.md)
+# Python 实用编程——讲师说明
 
+作者：戴维·比兹利（David Beazley）
 
+## 概述
+
+对于如何使用我的课程《Python 实用编程》进行教学的问题，本文档提供一些通用的说明和建议，包括课程目标、课程受众、棘手的内容等。
+
+一些人会在一个典型的、为期三天的公司培训中进行教学，本说明就是提供给这些教学人员的。在如何教授自己的课程方面，这些说明可能会给你带来一些启发。
+
+## 目标受众和一般方法
+
+本课程旨在作为已经有一定的编程经验人员的“Python 入门”课程。这绝对不是一门为编程新手而设计的课程。
+
+话虽如此，我发现 Python 课程中的学生也不大可能是硬核软件工程师或者程序员。相反，你可能会遇到工程师，科学家, web 程序员以及经验不足的开发者。学生背景差异很大。有些学生可能具有丰富的 C,C++, Java 经验，有些学生可能了解 PHP 和 HTML，有些学生可能掌握的是诸如 MATLAB 这样的工具，尽管我已经尽了最大努力把课程的先决条件说清楚，但是有些学生可能仍然几乎没有传统的"编程"经验。
+
+考虑到这一点，本课程旨在通过操作数据（尤其是股市数据）的一般问题来教 Python。之所以选择这个领域是因为它很简单，并且无论每个人的背景如何，都应该对此有所了解。举个例子，编程能力较弱的学生仍然可能要了解一些常用的东西，例如使用电子表格（Excel）。所以，如果他们真的被卡住了，你可以像这样告诉他们“元组的就像电子表格里面的数据行”或者“列表的操作和电子表格的列进行操作并且把结果放到新的一列中类似。”关键思想是扎根于现实世界环境中，而不是偏离到深奥的“计算机科学”问题上（例如：计算斐波那契数列）。
+
+这个领域的问题也可以很好的引入其它编程主题。例如，科学家/工程师可能想了解数据分析或者数据可视化，所以你可以给他们展示如何使用 matplotlib 绘图。Web 程序员可能想要了解如何在网页展示股市数据，所以，你可以讨论模板引擎。系统管理员可能想使用日志文件做一些事情，所以，你可以引导他们查看实时的股票数据流日志文件。软件工程师可能想了解设计，所以，你可以让他们看看将股票数据封装到对象内部或者使程序可扩展的方法（例如，如何让程序以 10 种不同的表格形式产生输出）。你懂的。
+
+## 演示指南
+
+演示幻灯片（notes）为课程提供了叙述结构，供学生练习时参考。假如学生能够阅读那些幻灯片并且他们写代码时有时间回头查看，那么就没必要一字不落的讲解。我倾向于快速地浏览幻灯片，并在前进的过程中展示一些简短的例子。我经常跳过这些幻灯片，进行现场演示。例如，你真的不需要那么多关于列表（list）的幻灯片，而是走向解释器，现场执行一些列表示例即可。经验法则：每张幻灯片的时间不超过 1 分钟，除非是特别棘手的内容。老实说，如果你觉得适合自己的话，可以跳过大部分的幻灯片，而只使用实时演示讲课。我经常这样做。
+
+## 课程练习
+
+本课程大约有 130 个动手练习。如果你进行每一项练习，并让学生有时间思考和写代码，则可能需要大约 10-12 小时。在实践中，你可能会发现学生在某些练习中需要更多的时间。对此，我在下面有一些说明。
+
+你应该向学生反复强调，题解代码是可用的，并且查看和复制题解代码也是可以的——尤其是有时间限制的时候。
+
+在教授课程之前，我强烈建议你浏览并完成每一道练习，以免发生意外。
+
+在授课期间，当学生做练习的时候，我通常也在自己的电脑上从头开始不看答案地完成每一道练习。为此，我强烈建议你手头准备一份练习的打印副本，而不必在电脑上查看练习（电脑屏幕那时可能正在投影）。在练习时间快要结束时，我将会开始讨论我的题解代码，强调屏幕上的不同点并对此进行讨论。如果题解存在任何潜在问题（包括设计注意事项），我也将进行讨论。请向学生强调，在继续之前，他们可能要看看或者复制题解代码。
+
+## 第 1 节:  简介
+
+本节的主要目标是让学生从编程环境开始入手。包括使用交互式shell，编辑或者运行简短的程序。在本节结束时，学生应该能够编写用于读取数据文件并执行简单的计算的简短脚本。他们将会了解数字，字符串，列表和文件，也会了解函数，异常和模块，但是不会介绍得太详细。
+
+本节往往所耗费的时间是最长的，因为学生对工具不熟悉，可能会遇到各种问题。你应该在教室到处走走并且确保每个人可以编辑，运行和调试简单的代码，这是至关重要的。确保学生正确安装了 Python，下载了课程练习，网络正常运行。解决出现的任何其他问题。
+
+时间：我打算在第 1 天的中午结束第 1 节。
+
+## 第 2 节：处理数据
+
+在这门课程中，本节可能是最重要的。它覆盖了数据表示和操作的基础，包括元组，列表，字典和集合。
+
+2.2 节是重中之重，请在合理的情况下，给学生足够的时间让他们完成练习。这些练习可能会持续 45 分钟，具体取决于学生。在本练习的中间，我往往会前进到 2.3 节（格式化输出），给学生足够多的时间来继续做练习。综上所述，2.2 或 2.3 可能需要 1 个小时以上的时间。
+
+2.4 节让学生探索 enumerate() 和 zip() 函数的用法。我认为这两个函数是必不可少的，所以，请不要跳过它们。
+
+2.5 节介绍 collections 模块。关于 collections，大量的内容可以说，但这个时候，学生可能还不完全能领会其重要性。可以从“这是个很酷的模块，之后值得进一步了解；先看几个有趣示例”的角度介绍，而不必在这里深入展开。
+
+2.6 节介绍列表推导式，这是一个用于处理列表数据的重要特性。向学生强调列表推导式与 SQL 数据库查询非常相似。在练习结束时，我经常做一些涉及更高级内容的交互性示例，如写一个列表推导式，或者使用 matplotlib 将数据可视化。如果你愿意，这也是一个介绍 Jupyter 的机会。
+
+2.7 节是最复杂的练习。它涉及到在 Python 中一等数据的使用，以及事实——诸如列表之类的数据结构可以存储任何类型对象，只要你想。这些练习与解析 CSV 中的数据列相关，稍后在 3.2 节中会再次使用相关的概念。
+
+时间：理想情况下，你希望第一天就完成第 2 节。但是，通常以第 2.5 节或者第 2.6 节结束。因此，如果你觉得自己有些落后，也不要惊慌。
+
+## 第 3 节：程序组织
+
+本节的主要目标是介绍有关函数的更详细的信息，并且鼓励学生使用函数。本节将函数构建到模块和脚本编写中。
+
+3.1 节是关于如何将简单的“脚本”转变为函数。不要鼓励学生写乱七八糟的“脚本”，相反，代码至少应该模块化到函数中。这使代码更易于理解，更易于后续变更，运行更快。函数很好。
+
+在整个课程中，3.2 节可能是最高级的一组练习。本节练习中，学生需要编写一个通用的实用函数来解析面向列的数据。但是，这会大量使用列表推导式和函数（例如，作为一等对象的函数）。你可能需要指导学生完成此代码的每一个步骤，详细地展示它的工作原理。然而，这样做的回报是巨大的——你可以向学生展示一个简短的通用函数，该函数的功能非常强大。如果没有大量复杂的代码，这些功能用C、C++ 或 Java 几乎是不可能写出来的。对于这些代码，有很多可能的设计或者讨论途径。发挥你的想象力吧。
+
+3.3 节为在 3.2 节中创建的函数添加了错误处理。通常，这是一个讨论异常处理的好时机。一定要谈一谈捕获所有异常的危险性。这可能是谈论“Python 之禅”里面“错误绝不能悄悄忽略”原则的好时机。
+
+注意事项：在练习 3.4 之前，确保学生获得了完全可以用的 report.py，pcost.py 和 fileparse.py。如果需要，请从 Solution 目录复制。
+
+3.4 节介绍模块导入。3.2-3.3 节编写的文件用于简化 3.1 节的代码。请注意，你可能需要帮助学生解决 IDLE，sys.path 以及其它与导入有关的各种设置的问题。
+
+3.5 节讨论 `__main__` 和脚本编写。有一点内容是关于命令行参数的。您可能会倾向于讨论类似 argparse 这样的模块。但是请注意，这样做会“打开一个泥潭”(译注：opens up a quagmire，可理解为“引入新的问题”)，一般情况下，最好只提一下然后继续。
+
+3.6 节对 Python 中的设计展开讨论。编写灵活的代码好还是编写硬编码文件名的代码好？这是你修改代码并必须对已有代码进行重构的第一个地方。
+
+从这里开始，大部分的练习都是对已经写好的代码做一些小改动。
+
+## 第 4 节：类和对象
+
+本节是关于面向对象编程（OOP）的。一般来说，假定学生在面向对象（OO）方面有深厚的背景是不保险的。因此，在开始之前，我通常会对面向对象编程“风格”以及数据和方法是如何绑定在一起的进行描述。以字符串和列表为例，说明什么是“对象”以及对象是如何调用（通过 . 号调用）方法进行操作的。强调方法是如何绑定到对象本身的。例如，使用 items.append(x) ，而不是调用一个单独的函数 append(items, x)。
+
+4.1 节介绍类语句以及向学生展示如何创建一个基本的对象。实际上，这只是为了介绍：类可以作为定义简单数据结构的一种方式——可以和第 2 节中为此目的而使用元组和列表联系起来。
+
+4.2 节是关于继承以及如何使用继承创建可扩展程序的。就面向对象编程和面向对象设计而言，本组练习可能是最重要的。请给学生足够的时间（30-45 分钟）学习继承。根据兴趣，你可以花费大量时间对面向对象编程的不同方面进行讨论。例如，不同的设计模式，继承层次结构，抽象基类等。
+
+4.3 节使用特殊方法做了一些试验。我不会花费太多时间去折腾特殊方法。稍后，练习 6.1 和其它地方会介绍特殊方法。
+
+时间上，通常是第二天结束。
+
+## 第 5 节：内部对象
+
+本节将向学生介绍对象系统的幕后知识，如何使用字典构建对象系统，实例和类是如何绑定在一起的，继承是如何工作的。不过，本节最重要的部分可能是封装（private，attributes,，properties，slots等）。
+
+5.1 节揭开表面现象，让学生观察和使用实例和类的底层字典。
+
+5.2 节讨论在 get/set 函数背后隐藏属性（attribute）并使用特性（properties）。我通常强调，这些技术在库和框架中很常用——尤其是需要对用户的选择进行控制的时候。
+
+精通 Python 的高手会发现我根本没有讨论像描述符（descriptors）或属性访问方法（`__getattr__`，
+`__setattr__`）这样的高级主题。根据以往的经验，我发现，这样做对于参加入门课程的学生而言，精神负担太重了。此时，每个人的头脑已经处于爆炸的边缘，如果现在去讨论描述符的工作原理，那么，要么在今天余下的时间里，要么在这门课程剩下的时间里，你会失去他们。将这些高级主题放到“高级 Python”课程吧。
+
+如果你正在看着时钟想着“我讲不完这门课程了”，那么你完全可以跳过第 5 节。
+
+## 第 6 节：生成器
+
+本节的主要目的是介绍生成器，生成器可用于实现自定义迭代。并将其用于与数据处理相关的各种问题。本节练习让学生学会分析流数据。练习使用被写入日志文件的股票更新信息作为流数据。
+
+在本节中，有两大观点需要强调一下。第一个观点，可以使用生成器编写基于增量处理（incremental processing）的代码。这对于流数据或其它庞大的数据集非常有用，因为这些数据太大了，无法一次性全部放入内存中。第二个观点，你可以将生成器/迭代器链接在一起使用以创建处理管道（类似于 Unix 的 pipes）。同样，这是处理和思考流数据，大型数据集的非常强大的方法。
+
+省略的内容：尽管本节描述了迭代协议，但是并没有详细介绍如何创建可迭代对象（即带有 `__iter__()` 和 `next()` 方法的类）。在实践中，我发现没必要总是介绍如何创建可迭代对象（生成器通常更好/更简单）。所以，为了节省时间，我特意将其省略。也不包括扩展生成器（协程）和并发生成器（如微线程 tasklets）。在高级课程中，最好包含这些内容。
+
+## 第 7 节：高级主题
+
+本节基本上是各种高级主题。这些主题本可以在之前进行介绍，但是由于与课程流程和课程练习内容相关的各种原因而没有介绍。如果你一定要知道的话，我曾经在课程的前面介绍过这些内容。因为学生已经被充足的信息所困扰，所以稍后再讨论这些高级主题更好一些——特别是到目前为止，每个人对 Python 都更加熟悉并且开始掌握使用 Python 的窍门。
+
+高级主题包括可变参数（(*args, **kwargs），匿名函数（lambda），闭包（closures）以及装饰器（decorators）。对装饰器的讨论只是元编程（metaprogramming）的一小部分。对此，你可以畅所欲言，但是我可能会避开元类（metaclasses）。最近，我一直在演示“numba”，将其作为更有趣的装饰器的例子。
+
+如果时间紧迫，第 7 节的大部分内容可以跳过或者高度浓缩（例如跳过练习）。
+
+## 第 8 节：测试和调试
+
+本节主要目的是介绍各种与测试、调试、以及软件开发相关的工具和技术。向学生介绍单元测试模块（unittest）、日志模块（logging），讨论断言（assertions）和"契约（contract）编程的思想"，展示调试器（debugger）和分析器（profiler）。这其中的大部分内容是不言自明的。
+
+## 第 9 节：包
+
+现在，学生已经编写了各种文件（pcost.py，report.py，fileparse.py，tableformat.py，stock.py，portfolio.py，follow.py......）。本节主要有两个目标：第一个，将所有的代码放入 Python 包结构中，虽然这只是简单的介绍，但是它们会将文件移到一个目录中，并且所有的内容将会被破坏，所以需要对导入语句（与包相关的导入）进行修改，并且可能需要弄一个 `__init__.py` 文件。第二个，编写一个简单的 setup.py 文件用于打包代码并分发给其他人。就这些，本课程到此结束。
+
+[目录](Contents.md)

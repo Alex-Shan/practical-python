@@ -1,148 +1,97 @@
-# Welcome!
+# 欢迎！
 
-When I first learned Python nearly 27 years ago, I was immediately
-struck by how I could productively apply it to all sorts of messy work
-projects. Fast-forward a decade and I found myself teaching others the
-same fun.  The result of that teaching is this course--A no-nonsense
-treatment of Python that has been actively taught to more than 400
-in-person groups since 2007.  Traders, systems admins, astronomers,
-tinkerers, and even a few hundred rocket scientists who used Python to
-help land a rover on Mars--they've all taken this course. Now, I'm
-pleased to make it available under a Creative Commons license--completely
-free of spam, signups, and other nonsense. Enjoy!
+> 本分支是《Python 实用编程》的简体中文版，采用原目录结构翻译文字教材。示例代码和数据保留原样。[英文原版](https://github.com/dabeaz-course/practical-python) · [中文目录](Notes/Contents.md) · [许可原文](LICENSE.md)
+>
+> 本版以 [codists/practical-python-zh](https://github.com/codists/practical-python-zh) 的中文译文为基础，对照当前英文版本补充和修订；感谢 codists、[hsfzxjy](https://github.com/hsfzxjy) 和 [whinc](https://github.com/whinc) 等贡献者。译文参考版本：`b34b5dfb215d76b8bd4845f60803398f67ab8471`。翻译与修订沿用 CC BY-SA 4.0 许可。
 
-[GitHub Pages](https://dabeaz-course.github.io/practical-python) | [GitHub Repo](https://github.com/dabeaz-course/practical-python).
+大约 27 年前，第一次学习 Python 时，我立即被它高效处理各种杂乱工作项目的能力吸引。十年后，我开始向别人传授同样的乐趣。教学的成果就是这门课程：一门务实的 Python 课程，自 2007 年以来已为 400 多个面授班讲授。交易员、系统管理员、天文学家、爱好者，以及数百名使用 Python 帮助火星探测车着陆的火箭科学家，都学过这门课。现在，我很高兴以知识共享许可公开它，不含垃圾信息、注册或其他繁琐事项。祝学习愉快！
 
---David Beazley ([https://dabeaz.com](https://dabeaz.com)), [@dabeaz](https://mastodon.social/@dabeaz)
+[英文课程网站](https://dabeaz-course.github.io/practical-python) | [英文源码仓库](https://github.com/dabeaz-course/practical-python)
 
-(P.S. This course is about Python. If you want a Python course that's about programming,
-you might consider [Advanced Programming with Python](https://www.dabeaz.com/advprog.html))
+——David Beazley（[https://dabeaz.com](https://dabeaz.com)），[@dabeaz](https://mastodon.social/@dabeaz)
 
-## What is This?
+（附言：本课程讲的是 Python。如果你想学习一门侧重编程的 Python 课程，可以考虑[《Python 高级编程》](https://www.dabeaz.com/advprog.html)。）
 
-The material you see here is the heart of an instructor-led Python
-training course used for corporate training and professional
-development. It was in continual development from 2007 to 2019 and
-battle tested in real-world classrooms.  Usually, it's taught
-in-person over the span of three or four days--requiring approximately
-25-35 hours of intense work. This includes the completion of
-approximately 130 hands-on coding exercises.
+## 这是什么课程？
 
-## Target Audience
+这里的材料是一门由讲师带领、用于企业培训和职业发展的 Python 课程的核心。它在 2007–2019 年间持续开发，并经受了实际课堂检验。通常以三至四天面授完成，需要约 25–35 小时的高强度学习，包括约 130 道动手编程练习。
 
-Students of this course are usually professional scientists,
-engineers, and programmers who already have experience in at least one
-other programming language. No prior knowledge of Python is required,
-but knowledge of common programming topics is assumed.  Most
-participants find the course challenging--even if they've already been
-doing a bit of Python programming.
+## 适合人群
 
-## Course Objectives
+学员通常是已具备至少一种其他编程语言经验的科学家、工程师和程序员。不要求 Python 基础，但假设具备常见编程知识。大多数参与者都认为课程具有挑战性，即便他们已经写过一些 Python。
 
-The goal of this course is to cover foundational aspects of Python
-programming with an emphasis on script writing, basic data manipulation, and
-program organization.  By the end of this course, students should be
-able to start writing useful Python programs on their own or be able
-to understand and modify Python code written by their
-coworkers.
+## 课程目标
 
-## Requirements
+课程涵盖 Python 编程基础，重点是脚本编写、基本数据操作和程序组织。完成后，学员应能独立编写有用的 Python 程序，或理解并修改同事编写的代码。
 
-To complete this course, you need nothing more than a basic
-installation of Python 3.6 or newer and time to work on it.
+## 学习要求
 
-## What This Course is Not
+只需安装 Python 3.6 或更新版本，并投入时间学习。
 
-This is not a course for absolute beginners on how to program a
-computer.  It is assumed that you already have programming experience
-in some other programming language or Python itself.
+## 本课程不讲什么？
 
-This is not a course on web development.  That's a different
-circus. However, if you stick around for this circus, you'll still see
-some interesting acts--just nothing involving animals.
+本课程不是面向零基础学习者的计算机编程入门课，假设你已有其他编程语言或 Python 的经验。
 
-This is not a course on using tools that happen to be written
-in Python. It's about learning the core Python language.
+本课程不讲 Web 开发，那是另一个“马戏团”。不过，留在这里仍能看到有趣的表演，只是没有动物。
 
-This is not a course for software engineers on how to write or
-maintain a one-million line Python application. I don't write programs
-like that, nor do most companies who use Python, and neither should
-you. Delete something already!
+本课程不讲如何使用恰好由 Python 编写的工具，而是学习 Python 核心语言。
 
-## Take me to the Course Already!
+本课程也不是教软件工程师如何编写或维护百万行 Python 应用。我不写这种程序，大多数使用 Python 的公司也不写，你也不必写。赶紧删掉一些代码吧！
 
-Ok, ok. Point your browser [HERE](Notes/Contents.md)!
+## 快带我进入课程！
 
-## Community Discussion
+好吧，点击[这里](Notes/Contents.md)！
 
-Want to discuss the course?  Feel free to use [GitHub Discussions](https://github.com/dabeaz-course/practical-python/discussions).
-I can't promise an individual response, but perhaps others can jump in to help.
+## 社区讨论
 
-## Acknowledgements
+想讨论课程？欢迎使用 [GitHub Discussions](https://github.com/dabeaz-course/practical-python/discussions)。我无法保证逐一回复，但其他人或许能提供帮助。
 
-Llorenç Muntaner was instrumental in converting the course content from
-Apple Keynote to the online structure that you see here.
+## 致谢
 
-Various instructors have presented this course at one time or another
-over the last 12 years. This includes (in alphabetical order): Ned
-Batchelder, Juan Pablo Claude, Mark Fenner, Michael Foord, Matt
-Harrison, Raymond Hettinger, Daniel Klein, Travis Oliphant, James
-Powell, Michael Selik, Hugo Shi, Ian Stokes-Rees, Yarko Tymciurak,
-Bryan Van de ven, Peter Wang, and Mark Wiebe.
+Llorenç Muntaner 在将课程从 Apple Keynote 转换为当前在线结构的过程中发挥了重要作用。
 
-I'd also like to thank the thousands of students who have taken this
-course and contributed to its success with their feedback and
-discussion.
+过去 12 年间，多位讲师曾讲授本课程，包括（按字母顺序）：Ned Batchelder、Juan Pablo Claude、Mark Fenner、Michael Foord、Matt Harrison、Raymond Hettinger、Daniel Klein、Travis Oliphant、James Powell、Michael Selik、Hugo Shi、Ian Stokes-Rees、Yarko Tymciurak、Bryan Van de ven、Peter Wang 和 Mark Wiebe。
 
-## Questions and Answers
+也感谢成千上万的学员，通过反馈和讨论帮助本课程取得成功。
 
-### Q: Are there course videos I can watch?
+## 问答
 
-No. This course is about you writing Python code, not watching someone else.
+### 问：有课程视频可以看吗？
 
-### Q: How is this course licensed?
+没有。本课程需要你亲自写 Python 代码，而不是看别人写。
 
-Practical Python Programming is licensed under a Creative Commons Attribution ShareAlike 4.0 International License.
+### 问：课程采用什么许可？
 
-### Q: May I use this material to teach my own Python course?
+《Python 实用编程》采用知识共享 署名—相同方式共享 4.0 国际许可协议（CC BY-SA 4.0）。
 
-Yes, as long as appropriate attribution is given.
+### 问：可以用这些材料教授自己的 Python 课程吗？
 
-### Q: May I make derivative works?
+可以，只要适当注明出处。
 
-Yes, as long as such works carry the same license terms and provide attribution.
+### 问：可以制作衍生作品吗？
 
-### Q: Can I translate this to another language?
+可以，只要沿用相同许可条款并注明出处。
 
-Yes, that would be awesome.  Send me a link when you're done.
+### 问：可以翻译为其他语言吗？
 
-### Q: Can I live-stream the course or make a video?
+可以，那非常好。完成后请发给我链接。
 
-Yes, go for it!  You'll probably learn a lot of Python doing that.
+### 问：可以直播课程或制作视频吗？
 
-### Q: Why wasn't topic X covered?
+可以，去做吧！你可能会在这个过程中学到很多 Python 知识。
 
-There is only so much material that you can cover in 3-4 days.  If
-it wasn't covered, it was probably because it was once covered and it
-caused everyone's head to explode or there was never enough time to
-cover it in the first place.   Also, this is a course, not a Python
-reference manual.
+### 问：为什么没有讲某个主题？
 
-### Q: Why isn't awesome `{command}` in awesome `{tool}` covered?
+三至四天能容纳的材料有限。如果没有讲某个主题，可能是以前讲过却让大家头晕脑胀，也可能是从来没有足够时间。另外，这是一门课程，不是 Python 参考手册。
 
-The focus of this course is on learning the core Python language,
-not learning the names of commands in tools.
+### 问：为什么没有讲很棒的 `{tool}` 中那个很棒的 `{command}`？
 
-### Q: Is this course being maintained or updated?
+课程重点是学习 Python 核心语言，而不是记住工具中的命令名称。
 
-This course represents a "finished product" that was taught and
-developed for more than decade.  I have no plans to significantly
-revise the material at this time, but will occasionally fix bugs and
-add clarification.
+### 问：课程还在维护或更新吗？
 
-### Q: Do you accept pull requests?
+这是一份经过十余年开发与教学的“成品”。目前我没有大幅修订的计划，但偶尔会修复错误并补充说明。
 
-Bug reports are appreciated and may be filed through the
-[issue tracker](https://github.com/dabeaz-course/practical-python/issues).
-Pull requests are not accepted except by invitation. Please file an issue first.
+### 问：接受拉取请求吗？
 
+欢迎通过[问题跟踪器](https://github.com/dabeaz-course/practical-python/issues)报告错误。除受邀情况外，不接受拉取请求，请先提交 issue。

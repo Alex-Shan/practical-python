@@ -1,8 +1,5 @@
-# Work Area
+# 工作目录
 
-Do all of your coding work here, in the `Work/` directory.  A number of starting
-files have been given (`bounce.py`, `mortgage.py`, `pcost.py`, etc.) along with
-their corresponding exercise number.
+请在 `Work/` 目录中完成所有编程任务。这里提供了 `bounce.py`、`mortgage.py`、`pcost.py` 等起始文件，并标明对应的练习编号。
 
-Many of the programs you write reference files found in the `Data/` directory.
-That is also located here.
+你编写的许多程序会引用 `Data/` 中的文件，该目录也位于此处。

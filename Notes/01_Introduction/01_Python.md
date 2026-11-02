@@ -1,42 +1,28 @@
-[Contents](../Contents.md) \| [Next (1.2 A First Program)](02_Hello_world.md)
+[目录](../Contents.md) \| [下一节（1.2 第一个程序）](02_Hello_world.md)
 
 # 1.1 Python
 
-### What is Python?
+### 什么是 Python？
 
-Python is an interpreted high level programming language.  It is often classified as a
-["scripting language"](https://en.wikipedia.org/wiki/Scripting_language) and
-is considered similar to languages such as Perl, Tcl, or Ruby.  The syntax
-of Python is loosely inspired by elements of C programming.
+Python 是一种解释型高级编程语言，通常被归类为[“脚本语言”](https://en.wikipedia.org/wiki/Scripting_language)，与 Perl、Tcl、Ruby 等语言类似。其语法在一定程度上受到 C 语言元素的启发。
 
-Python was created by Guido van Rossum around 1990 who named it in honor of Monty Python.
+Python 由 Guido van Rossum 于 1990 年前后创建，以 Monty Python 喜剧团体命名。
 
-### Where to get Python?
+### 从哪里获取 Python？
 
-[Python.org](https://www.python.org/) is where you obtain Python.  For the purposes of this course, you
-only need a basic installation.  I recommend installing Python 3.6 or newer. Python 3.6 is used in the notes
-and solutions.
+可从 [Python.org](https://www.python.org/) 获取 Python。本课程只需要基本安装，建议使用 Python 3.6 或更新版本。讲义和解答使用 Python 3.6。
 
-### Why was Python created?
+### 为什么要创建 Python？
 
-In the words of Python's creator:
+用 Python 创始人的话来说：
 
-> My original motivation for creating Python was the perceived need
-> for a higher level language in the Amoeba [Operating Systems]
-> project. I realized that the development of system administration
-> utilities in C was taking too long. Moreover, doing these things in
-> the Bourne shell wouldn't work for a variety of reasons. ... So,
-> there was a need for a language that would bridge the gap between C
-> and the shell.
+> 我创建 Python 的最初动机，是感觉 Amoeba [操作系统] 项目需要一种更高级的语言。我意识到，用 C 开发系统管理工具耗时太长。而且，出于多种原因，Bourne shell 也不适合这些任务。……因此，需要一种语言来填补 C 与 shell 之间的空白。
 >
-> - Guido van Rossum
+> ——Guido van Rossum
 
-### Where is Python on my Machine?
+### 我的机器上的 Python 在哪里？
 
-Although there are many environments in which you might run Python,
-Python is typically installed on your machine as a program that runs
-from the terminal or command shell. From the terminal, you should be
-able to type `python` like this:
+虽然 Python 可以在许多环境中运行，但通常作为一个可从终端或命令行 shell 启动的程序安装在机器上。在终端中，应该能这样输入 `python`：
 
 ```
 bash $ python
@@ -48,26 +34,17 @@ hello world
 >>>
 ```
 
-If you are new to using the shell or a terminal, you should probably
-stop, finish a short tutorial on that first, and then return here.
+如果不熟悉 shell 或终端，建议先暂停学习，完成一个简短的相关教程，再回来继续。
 
-Although there are many non-shell environments where you can code
-Python, you will be a stronger Python programmer if you are able to
-run, debug, and interact with Python at the terminal.  This is
-Python's native environment.  If you are able to use Python here, you
-will be able to use it everywhere else.
+虽然许多非 shell 环境也可以编写 Python，但掌握在终端中运行、调试和交互的能力，会让你成为更强的 Python 程序员。这是 Python 的原生环境；能够在这里使用，就能在其他环境中使用。
 
-## Exercises
+## 练习
 
-### Exercise 1.1: Using Python as a Calculator
+### 练习 1.1：将 Python 用作计算器
 
-On your machine, start Python and use it as a calculator to solve the
-following problem.
+在机器上启动 Python，将其用作计算器解决以下问题。
 
-Lucky Larry bought 75 shares of Google stock at a price of $235.14 per
-share. Today, shares of Google are priced at $711.25. Using Python’s
-interactive mode as a calculator, figure out how much profit Larry would
-make if he sold all of his shares.
+幸运的 Larry 以每股 235.14 美元买入了 75 股 Google 股票。今天股价为 711.25 美元。用 Python 交互模式计算：如果卖出全部股票，他能赚多少？
 
 ```python
 >>> (711.25 - 235.14) * 75
@@ -75,9 +52,7 @@ make if he sold all of his shares.
 >>>
 ```
 
-Pro-tip: Use the underscore (\_) variable to use the result of the last
-calculation. For example, how much profit does Larry make after his evil
-broker takes their 20% cut?
+小技巧：下划线（\_）变量保存上一次计算的结果。例如，贪婪的经纪人抽取 20% 后，Larry 还能赚多少？
 
 ```python
 >>> _ * 0.80
@@ -85,39 +60,21 @@ broker takes their 20% cut?
 >>>
 ```
 
-### Exercise 1.2: Getting help
+### 练习 1.2：获取帮助
 
-Use the `help()` command to get help on the `abs()` function. Then use
-`help()` to get help on the `round()` function. Type `help()` just by
-itself with no value to enter the interactive help viewer.
+使用 `help()` 查看 `abs()` 的帮助，再查看 `round()` 的帮助。直接输入不带参数的 `help()`，进入交互式帮助查看器。
 
-One caution with `help()` is that it doesn’t work for basic Python
-statements such as `for`, `if`, `while`, and so forth (i.e., if you type
-`help(for)` you’ll get a syntax error). You can try putting the help
-topic in quotes such as `help("for")` instead. If that doesn’t work,
-you’ll have to turn to an internet search.
+注意，`help()` 不能直接用于 `for`、`if`、`while` 等基本语句。例如，`help(for)` 会导致语法错误。可以尝试将主题放入引号，如 `help("for")`。如果仍不起作用，就需要上网搜索。
 
-Followup: Go to <http://docs.python.org> and find the documentation for
-the `abs()` function (hint: it’s found under the library reference
-related to built-in functions).
+后续练习：访问 <http://docs.python.org>，找到 `abs()` 的文档。提示：它位于标准库参考的内置函数部分。
 
-### Exercise 1.3: Cutting and Pasting
+### 练习 1.3：复制与粘贴
 
-This course is structured as a series of traditional web pages where
-you are encouraged to try interactive Python code samples **by typing
-them out by hand.** If you are learning Python for the first time,
-this "slow approach" is encouraged.  You will get a better feel for
-the language by slowing down, typing things in, and thinking about
-what you are doing.
+本课程由一系列传统网页组成，鼓励你**亲手输入**交互式 Python 示例。如果第一次学习 Python，建议采用这种“慢方法”：放慢速度，输入代码，并思考自己在做什么，能更好地体会这门语言。
 
-If you must "cut and paste" code samples, select code
-starting after the `>>>` prompt and going up to, but not any further
-than the first blank line or the next `>>>` prompt (whichever appears
-first). Select "copy" from the browser, go to the Python window, and
-select "paste" to copy it into the Python shell. To get the code to
-run, you may have to hit "Return" once after you’ve pasted it in.
+如果必须复制粘贴示例，请从 `>>>` 提示符之后开始选择，到第一个空行或下一个 `>>>` 之前为止，以先出现者为准。在浏览器中选择“复制”，切换到 Python 窗口并选择“粘贴”。粘贴后可能还需按一次回车才能执行。
 
-Use cut-and-paste to execute the Python statements in this session:
+通过复制粘贴执行以下会话中的 Python 语句：
 
 ```python
 >>> 12 + 20
@@ -136,22 +93,15 @@ Use cut-and-paste to execute the Python statements in this session:
 >>>
 ```
 
-Warning: It is never possible to paste more than one Python command
-(statements that appear after `>>>`) to the basic Python shell at a
-time. You have to paste each command one at a time.
+警告：基础 Python shell 一次不能粘贴多条 Python 命令，即 `>>>` 后的语句。必须逐条粘贴。
 
-Now that you've done this, just remember that you will get more out of
-the class by typing in code slowly and thinking about it--not cut and pasting.
+完成后请记住：慢慢输入代码并思考，比直接复制粘贴能让你从课程中获得更多。
 
-### Exercise 1.4: Where is My Bus?
+### 练习 1.4：我的公交车在哪里？
 
-Note: This was a whimsical example that was a real crowd-pleaser when
-I taught this course in my office.  You could query the bus and then
-literally watch it pass by the window out front.  Sadly, APIs rarely live
-forever and it seems that this one has now ridden off into the sunset. --Dave
+说明：这是个有趣的例子，当年在办公室授课时很受欢迎。你可以查询公交车，然后亲眼看到它从窗外经过。可惜，API 很少能一直存在，这个接口似乎也已经退出历史舞台。——Dave
 
-Update: GitHub user @asett has suggested the following modified code might work,
-but you'll have to provide your own API key (available [here](https://www.transitchicago.com/developers/bustracker/)).
+更新：GitHub 用户 @asett 提出了以下修改，可能可以运行，但需要提供自己的 API 密钥（可从[这里](https://www.transitchicago.com/developers/bustracker/)获取）。
 
 ```python
 import urllib.request
@@ -163,11 +113,9 @@ for pt in doc.findall('.//prdctdn'):
         print(pt.text)
 ```
 
-(Original exercise example follows below)
+（以下为原始练习示例。）
 
-Try something more advanced and type these statements to find out how
-long people waiting on the corner of Clark street and Balmoral in
-Chicago will have to wait for the next northbound CTA \#22 bus:
+尝试更高级的操作：输入以下语句，查询在芝加哥 Clark 街和 Balmoral 街交叉口等待北向 CTA \#22 公交车的人还要等多久：
 
 ```python
 >>> import urllib.request
@@ -183,24 +131,13 @@ Chicago will have to wait for the next northbound CTA \#22 bus:
 >>>
 ```
 
-Yes, you just downloaded a web page, parsed an XML document, and
-extracted some useful information in about 6 lines of code. The data
-you accessed is actually feeding the website
-<http://ctabustracker.com/bustime/home.jsp>. Try it again and watch
-the predictions change.
+没错，你刚用大约 6 行代码下载网页、解析 XML 文档，并提取了有用信息。访问的数据实际上也用于 <http://ctabustracker.com/bustime/home.jsp>。再次运行，观察预计到站时间如何变化。
 
-Note: This service only reports arrival times within the next 30 minutes.
-If you're in a different timezone and it happens to be 3am in Chicago, you
-might not get any output.  You use the tracker link above to double check.
+注意：服务只报告未来 30 分钟内的到站时间。如果你在其他时区，而芝加哥恰好是凌晨 3 点，可能没有任何输出。可以用上面的公交追踪链接核实。
 
-If the first import statement `import urllib.request` fails, you’re
-probably using Python 2. For this course, you need to make sure you’re
-using Python 3.6 or newer. Go to <https://www.python.org> to download
-it if you need it.
+如果第一条 `import urllib.request` 失败，你可能正在使用 Python 2。本课程要求 Python 3.6 或更新版本，如有需要，请到 <https://www.python.org> 下载。
 
-If your work environment requires the use of an HTTP proxy server, you may need
-to set the `HTTP_PROXY` environment variable to make this part of the
-exercise work. For example:
+如果工作环境要求使用 HTTP 代理，可能需要设置 `HTTP_PROXY` 环境变量，才能完成这部分练习。例如：
 
 ```python
 >>> import os
@@ -208,8 +145,6 @@ exercise work. For example:
 >>>
 ```
 
-If you can't make this work, don't worry about it.  The rest of this course
-has nothing to do with parsing XML.
+如果无法运行，也不用担心。本课程其余部分与 XML 解析无关。
 
-[Contents](../Contents.md) \| [Next (1.2 A First Program)](02_Hello_world.md)
-
+[目录](../Contents.md) \| [下一节（1.2 第一个程序）](02_Hello_world.md)

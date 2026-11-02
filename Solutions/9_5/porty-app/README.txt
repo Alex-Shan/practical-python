@@ -1,8 +1,6 @@
-Code from Practical Python.
+《Python 实用编程》的示例代码。
 
-The "porty" directory is a Python package of code that's loaded via 
-import.  The "print-report.py" program is a top-level script that
-produces a report.  Try it:
+"porty" 目录是通过 import 加载的 Python 包。"print-report.py" 是生成报告的顶层脚本。试试看：
 
 shell % python3 print-report.py portfolio.csv prices.csv txt
       Name     Shares      Price     Change 

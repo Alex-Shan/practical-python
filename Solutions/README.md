@@ -1,7 +1,3 @@
-# Solutions
+# 解答
 
-This directory contains solutions to selected exercises.  The code is
-written to run within this directory and has file paths set
-accordingly.  If you copy any of the code to the `Work/` directory,
-you might need to adjust filenames.
-
+本目录包含部分练习的解答。代码按在此目录中运行而编写，文件路径也相应设置。如果将代码复制到 `Work/`，可能需要调整文件名。

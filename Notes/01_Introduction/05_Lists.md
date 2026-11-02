@@ -1,20 +1,19 @@
-[Contents](../Contents.md) \| [Previous (1.4 Strings)](04_Strings.md) \| [Next (1.6 Files)](06_Files.md)
+[目录](../Contents.md) \| [上一节 (1.4 字符串)](04_Strings.md) \| [下一节 (1.6 文件)](06_Files.md)
 
-# 1.5 Lists
+# 1.5 列表
 
-This section introduces lists, Python's primary type for holding an ordered collection of values.
+本节介绍 Python 原始数据类型列表（list）。 列表是一种有序的集合。
 
-### Creating a List
+### 创建列表
 
-Use square brackets to define a list literal:
+使用方括号 [] 来定义列表字面量。
 
 ```python
 names = [ 'Elwood', 'Jake', 'Curtis' ]
 nums = [ 39, 38, 42, 65, 111]
 ```
 
-Sometimes lists are created by other methods.  For example, a string can be split into a
-list using the `split()` method:
+有时候，列表也可以通过其它方法创建。例如：使用字符串的 `split()` 方法可以将一个字符串拆分为一个列表：
 
 ```python
 >>> line = 'GOOG,100,490.10'
@@ -24,16 +23,16 @@ list using the `split()` method:
 >>>
 ```
 
-### List operations
+### 列表操作
 
-Lists can hold items of any type. Add a new item using `append()`:
+列表可以存储任何类型的项（译注：item，或者称为**元素**）。使用 `append()` 方法添加一个新的项：
 
 ```python
 names.append('Murphy')    # Adds at end
 names.insert(2, 'Aretha') # Inserts in middle
 ```
 
-Use `+` to concatenate lists:
+使用加号 + 来拼接列表：
 
 ```python
 s = [1, 2, 3]
@@ -41,7 +40,7 @@ t = ['a', 'b']
 s + t           # [1, 2, 3, 'a', 'b']
 ```
 
-Lists are indexed by integers. Starting at 0.
+列表通过整数进行索引，索引从 0 开始。
 
 ```python
 names = [ 'Elwood', 'Jake', 'Curtis' ]
@@ -51,43 +50,43 @@ names[1]  # 'Jake'
 names[2]  # 'Curtis'
 ```
 
-Negative indices count from the end.
+负索引从列表尾部开始计数：
 
 ```python
 names[-1] # 'Curtis'
 ```
 
-You can change any item in a list.
+你可以改变列表中的任何项:
 
 ```python
 names[1] = 'Joliet Jake'
 names                     # [ 'Elwood', 'Joliet Jake', 'Curtis' ]
 ```
 
-Length of the list.
+列表的长度：
 
 ```python
 names = ['Elwood','Jake','Curtis']
 len(names)  # 3
 ```
 
-Membership test (`in`, `not in`).
+成员测试（`in`, `not in`）：
 
 ```python
 'Elwood' in names       # True
 'Britney' not in names  # True
 ```
 
-Replication (`s * n`).
+复制（`s * n`）：
 
 ```python
 s = [1, 2, 3]
 s * 3   # [1, 2, 3, 1, 2, 3, 1, 2, 3]
 ```
 
-### List Iteration and Search
+### 列表遍历和查找：
 
-Use `for` to iterate over the list contents.
+使用 `for` 遍历列表内容：
 
 ```python
 for name in names:
@@ -96,22 +95,22 @@ for name in names:
     ...
 ```
 
-This is similar to a `foreach` statement from other programming languages.
+这和其它编程语言的 `foreach` 语句类似。
 
-To find the position of something quickly, use `index()`.
+为了快速找到某项的位置（索引），使用 `index()` 函数：
 
 ```python
 names = ['Elwood','Jake','Curtis']
 names.index('Curtis')   # 2
 ```
 
-If the element is present more than once, `index()` will return the index of the first occurrence.
+如果元素出现不止一次，`index()` 方法将会返回元素第一次出现的索引。
 
-If the element is not found, it will raise a `ValueError` exception.
+如果元素没有找到，`index()` 方法将引发 `ValueError` 异常。
 
-### List Removal
+### 列表删除
 
-You can remove items either by element value or by index:
+你可以按元素值或者按索引删除元素：
 
 ```python
 # Using the value
@@ -121,13 +120,11 @@ names.remove('Curtis')
 del names[1]
 ```
 
-Removing an item does not create a hole.  Other items will move down
-to fill the space vacated.  If there are more than one occurrence of
-the element, `remove()` will remove only the first occurrence.
+移除一个元素不会“留空”。其它的元素将会移动来填充删除元素后腾出的空间。如果元素出现不止一次，`remove()` 方法将只删除第一次出现的元素。
 
-### List Sorting
+### 列表排序
 
-Lists can be sorted "in-place".
+列表可以“原地”排序：
 
 ```python
 s = [10, 1, 7, 3]
@@ -142,15 +139,15 @@ s = ['foo', 'bar', 'spam']
 s.sort()                    # ['bar', 'foo', 'spam']
 ```
 
-Use `sorted()` if you'd like to make a new list instead:
+如果你想生成一个新的列表，使用 `sorted()` 函数：
 
 ```python
 t = sorted(s)               # s unchanged, t holds sorted values
 ```
 
-### Lists and Math
+### 列表和数学
 
-*Caution: Lists were not designed for math operations.*
+警告：列表不是为数学运算而设计的：
 
 ```python
 >>> nums = [1, 2, 3, 4, 5]
@@ -160,27 +157,25 @@ t = sorted(s)               # s unchanged, t holds sorted values
 [1, 2, 3, 4, 5, 10, 11, 12, 13, 14]
 ```
 
-Specifically, lists don't represent vectors/matrices as in MATLAB, Octave, R, etc.
-However, there are some packages to help you with that (e.g. [numpy](https://numpy.org)).
+特别地，列表无法像 MATLAB, Octave, R 那样表示向量/矩阵。但是，有一些包可以帮助你解决这个问题（例如：[numpy](https://numpy.org)）。
 
-## Exercises
+## 练习
 
-In this exercise, we experiment with Python's list datatype. In the last section,
-you worked with strings containing stock symbols.
+在本次练习中，我们尝试使用 Python 的列表数据类型。在上一节中，你使用了包含股票代码的字符串：
 
 ```python
 >>> symbols = 'HPQ,AAPL,IBM,MSFT,YHOO,DOA,GOOG'
 ```
 
-Split it into a list of names using the `split()` operation of strings:
+使用字符串的 `split()`  方法把 symbols 拆分为一个包含股票代码名字的列表：
 
 ```python
 >>> symlist = symbols.split(',')
 ```
 
-### Exercise 1.19: Extracting and reassigning list elements
+### 练习 1.19：提取和重新分配列表元素
 
-Try a few lookups:
+尝试一些查找：
 
 ```python
 >>> symlist[0]
@@ -194,7 +189,7 @@ Try a few lookups:
 >>>
 ```
 
-Try reassigning one value:
+尝试重新分配一个值：
 
 ```python
 >>> symlist[2] = 'AIG'
@@ -203,7 +198,7 @@ Try reassigning one value:
 >>>
 ```
 
-Take a few slices:
+切片：
 
 ```python
 >>> symlist[0:3]
@@ -213,7 +208,7 @@ Take a few slices:
 >>>
 ```
 
-Create an empty list and append an item to it.
+创建一个空的列表并添加一个元素到其中：
 
 ```python
 >>> mysyms = []
@@ -222,7 +217,7 @@ Create an empty list and append an item to it.
 ['GOOG']
 ```
 
-You can reassign a portion of a list to another list. For example:
+你可以将一个列表的一部分重新分配到另一个列表中。例如：
 
 ```python
 >>> symlist[-2:] = mysyms
@@ -231,13 +226,13 @@ You can reassign a portion of a list to another list. For example:
 >>>
 ```
 
-When you do this, the list on the left-hand-side (`symlist`) will be resized as appropriate to make the right-hand-side (`mysyms`) fit.
-For instance, in the above example, the last two items of `symlist` got replaced by the single item in the list `mysyms`.
+当执行此操作时，左手边的列表（`symlist`）的大小将会被适当调整，以适应右手边的列表。
 
-### Exercise 1.20: Looping over list items
+例如，在上面的实例中，`symlist` 的最后两项被 `mysyms` 列表中的单个元素（'GOOG'）取代。
 
-The `for` loop works by looping over data in a sequence such as a list.
-Check this out by typing the following loop and watching what happens:
+### 练习 1.20：遍历列表元素
+
+ `for` 循环可以遍历列表这样的序列。通过输入下列的循环并且查看发生了什么来验证这点：
 
 ```python
 >>> for s in symlist:
@@ -245,9 +240,9 @@ Check this out by typing the following loop and watching what happens:
 # Look at the output
 ```
 
-### Exercise 1.21: Membership tests
+### 练习 1.21：成员测试
 
-Use the `in` or `not in` operator to check if `'AIG'`,`'AA'`, and `'CAT'` are in the list of symbols.
+使用 `in` 或者 `not in` 操作符来检查 `'AIG'`，`'AA'`，和  `'CAT'` 是否在 symbols 列表中：
 
 ```python
 >>> # Is 'AIG' IN the `symlist`?
@@ -259,9 +254,9 @@ True
 >>>
 ```
 
-### Exercise 1.22: Appending, inserting, and deleting items
+### 练习 1.22：添加，插入和删除元素
 
-Use the `append()` method to add the symbol `'RHT'` to end of `symlist`.
+使用 `append()` 方法把 `'RHT'` 添加到列表 `symlist` 的末尾：
 
 ```python
 >>> # append 'RHT'
@@ -270,7 +265,7 @@ Use the `append()` method to add the symbol `'RHT'` to end of `symlist`.
 >>>
 ```
 
-Use the `insert()` method to insert the symbol `'AA'` as the second item in the list.
+使用 `insert()` 方法把 `'AA'` 作为列表的第二个元素插入到列表中：
 
 ```python
 >>> # Insert 'AA' as the second item in the list
@@ -279,7 +274,7 @@ Use the `insert()` method to insert the symbol `'AA'` as the second item in the 
 >>>
 ```
 
-Use the `remove()` method to remove `'MSFT'` from the list.
+使用 `remove()` 方法从列表中删除 `'MSFT'`：
 
 ```python
 >>> # Remove 'MSFT'
@@ -288,9 +283,9 @@ Use the `remove()` method to remove `'MSFT'` from the list.
 >>>
 ```
 
-Append a duplicate entry for `'YHOO'` at the end of the list.
+添加一个重复的 `'YHOO'` 条目到列表的末尾。
 
-*Note: it is perfectly fine for a list to have duplicate values.*
+*注意：列表有重复的值是完全没有问题的：*
 
 ```python
 >>> # Append 'YHOO'
@@ -299,7 +294,7 @@ Append a duplicate entry for `'YHOO'` at the end of the list.
 >>>
 ```
 
-Use the `index()` method to find the first position of `'YHOO'` in the list.
+使用 `index()` 方法查看 `'YHOO'` 在列表中的第一个位置：
 
 ```python
 >>> # Find the first index of 'YHOO'
@@ -309,7 +304,7 @@ Use the `index()` method to find the first position of `'YHOO'` in the list.
 >>>
 ```
 
-Count how many times `'YHOO'` is in the list:
+统计 `'YHOO'` 在列表中出现了多少次：
 
 ```python
 >>> symlist.count('YHOO')
@@ -317,7 +312,7 @@ Count how many times `'YHOO'` is in the list:
 >>>
 ```
 
-Remove the first occurrence of `'YHOO'`.
+删除第一次出现的 `'YHOO'`：
 
 ```python
 >>> # Remove first occurrence 'YHOO'
@@ -326,12 +321,11 @@ Remove the first occurrence of `'YHOO'`.
 >>>
 ```
 
-Just so you know, there is no method to find or remove all occurrences of an item.
-However, we'll see an elegant way to do this in section 2.
+众所周知，没有方法找到或者删除某个元素在列表中重复出现的所有项。但是，我们将会在第二节看到一种优雅的方式去实现它。
 
-### Exercise 1.23: Sorting
+### 练习 1.23：排序
 
-Want to sort a list?  Use the `sort()` method. Try it out:
+想要对一个列表排序吗？使用 `sort()` 方法。试试看：
 
 ```python
 >>> symlist.sort()
@@ -340,7 +334,7 @@ Want to sort a list?  Use the `sort()` method. Try it out:
 >>>
 ```
 
-Want to sort in reverse? Try this:
+想要对一个列表倒序吗？尝试这个：
 
 ```python
 >>> symlist.sort(reverse=True)
@@ -349,12 +343,11 @@ Want to sort in reverse? Try this:
 >>>
 ```
 
-Note: Sorting a list modifies its contents 'in-place'.  That is, the elements of the list are shuffled around, but no new list is created as a result.
+注意：对列表排序可以“原地”修改其内容。也就是说，是对列表的元素进行“洗牌”，而不是创建一个新的列表作为结果。
 
-### Exercise 1.24: Putting it all back together
+### 练习 1.24：列表转字符串
 
-Want to take a list of strings and join them together into one string?
-Use the `join()` method of strings like this (note: this looks funny at first).
+想要把一个包含字符串的列表连接到一个字符串中吗？像下面这样使用字符串的 `join()` 方法实现（注意：这初看起来很有趣）：
 
 ```python
 >>> a = ','.join(symlist)
@@ -369,10 +362,9 @@ Use the `join()` method of strings like this (note: this looks funny at first).
 >>>
 ```
 
-### Exercise 1.25: Lists of anything
+### 练习 1.25：包含任何内容的列表
 
-Lists can contain any kind of object, including other lists (e.g., nested lists).
-Try this out:
+列表可以包含任何类型的对象，包括列表（示例：嵌套的列表）。试试看：
 
 ```python
 >>> nums = [101, 102, 103]
@@ -381,10 +373,9 @@ Try this out:
 ['spam', ['YHOO', 'RHT', 'HPQ', 'GOOG', 'AIG', 'AAPL', 'AA'], [101, 102, 103]]
 ```
 
-Pay close attention to the above output. `items` is a list with three elements.
-The first element is a string, but the other two elements are lists.
+请注意上面的输出，`items`  是一个包含三个元素的列表，第一个元素是一个字符串，其它两个元素是列表。
 
-You can access items in the nested lists by using multiple indexing operations.
+你可以通过多个索引操作来访问嵌套列表的项。
 
 ```python
 >>> items[0]
@@ -404,11 +395,6 @@ You can access items in the nested lists by using multiple indexing operations.
 >>>
 ```
 
-Even though it is technically possible to make very complicated list
-structures, as a general rule, you want to keep things simple.
-Usually lists hold items that are all the same kind of value.  For
-example, a list that consists entirely of numbers or a list of text
-strings.  Mixing different kinds of data together in the same list is
-often a good way to make your head explode so it's best avoided.
+尽管在技术上能够生成非常复杂的列表结构，但作为一般规则，你还是希望保持简单。通常，列表存储类型相同的元素。例如，完全由数字或者文本字符串构成的列表。在同一个列表中混合不同类型的数据，往往会让人感到头痛，因此最好避免这种情况。
 
-[Contents](../Contents.md) \| [Previous (1.4 Strings)](04_Strings.md) \| [Next (1.6 Files)](06_Files.md)
+[目录](../Contents.md) \| [上一节 (1.4 字符串)](04_Strings.md) \| [下一节 (1.6 文件)](06_Files.md)
